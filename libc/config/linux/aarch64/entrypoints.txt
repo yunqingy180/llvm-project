@@ -1,6 +1,7 @@
 set(TARGET_ANNEX_K_ENTRYPOINTS
     # stdlib.h entrypoints
     libc.src.stdlib.abort_handler_s
+    libc.src.stdlib.ignore_handler_s
 )
 
 set(TARGET_LIBC_ENTRYPOINTS
