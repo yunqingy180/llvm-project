@@ -20,6 +20,12 @@
 
 using namespace mlir;
 
+// Prevent linker DCE.
+[[maybe_unused]] auto *_LLVMContextCreate = &LLVMContextCreate;
+[[maybe_unused]] auto *_LLVMPrintModuleToString = &LLVMPrintModuleToString;
+[[maybe_unused]] auto *_LLVMDisposeModule = &LLVMDisposeModule;
+[[maybe_unused]] auto *_LLVMContextDispose = &LLVMContextDispose;
+
 LLVMModuleRef mlirTranslateModuleToLLVMIR(MlirOperation module,
                                           LLVMContextRef context) {
   Operation *moduleOp = unwrap(module);
